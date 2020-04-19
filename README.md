@@ -48,7 +48,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 | jump&link  |jal address|
 
 ### งานครั้งที่ 1
-  [คลิปงานครั้งที่ 1](https://www.youtube.com/watch?v=uxKd0FtUXx8&t=9s)
+  [คลิปงานครั้งที่ 1 อธิบายรูปแบบคำสั่ง R-FORMAT](https://www.youtube.com/watch?v=uxKd0FtUXx8&t=9s)
 
 ## สรุปเนื้อหาการบ้านครั้งที่ 2
 **การทำงานของ CPU**
@@ -85,7 +85,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 8. Decoder ทำการอ่าน 6 bit แรกคือ 000110 พบว่าเป็น I-Format คำสั่ง lw (load word) 5 bits ถัดมาคือ 00000 คือ $rs=0 5 bits ถัดมาคือ 01001 $rt=9 และ    16 bits ที่เหลือคือ 0000000000000100 หมายความว่า offset = 4 ซึ่งหลักการของ lw นั้นคือการ นำค่า offset ไปบวกกับ $rs จะได้ Address ที่ต้องไปดึงข้อมูลออก    มาอ่านและเก็บ ใน $rt 
 
 ### งานครั้งที่ 2
-  [คลิปงานครั้งที่ 2](https://www.youtube.com/watch?v=afBzikgJ6VA)
+  [คลิปงานครั้งที่ 2 อธิบายหลักการทำงานของ CPU](https://www.youtube.com/watch?v=afBzikgJ6VA)
 
 
 
@@ -107,20 +107,21 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
     - มี ALUout ที่เก็บค่าหลังจากคำนวณ
  
  ### งานครั้งที่ 3
-  [คลิปงานครั้งที่ 3](https://www.youtube.com/watch?v=D7P8hxrkiEY)
+  [คลิปงานครั้งที่ 3 อธิบายความแตกต่างระหว่าง Single Cycle และ Multi Cycle](https://www.youtube.com/watch?v=D7P8hxrkiEY)
+  
+  
+## สรุปเนื้อหาการบ้านครั้งที่ 4
+ **การทำงานของคำสั่ง lw ใน Multi Cycle**
+    คำสั่ง lw ใน Multi Cycle นั้นมีทั้งหมด 5 ขั้นตอนด้วยกัน
+ 1. อ่านคำสั่งจาก Memory มาเก็บใน IR (Instruction Register) และนำ PC = PC + 4 พร้อมๆกัน
+ 2. นำ ค่าจาก $rs และ $rt ไปเก็บไว้ที่ A,B ตามลำดับ นำค่า offset มาแปลงเป็น 32 บิทแล้วนำไปที่ ALU เพื่อบวกกับ PC แล้วนำไปเก็บที่ ALUout
+ 3. นำค่า จาก A เข้ามาบวกกับ offset และนำค่าไปไว้ที่ ALUout (ALUOut = A + sign-extend(IR[15-0])
+ 4. ค่าที่ได้จาก ALUout คือ ค่าของ Address ของ Memory ที่จะถูกอ่านค่าออกมา (MDR = Memory[ALUout])
+ 5. นำค่าที่อ่านมาจาก Memory ไปเก็บไว้ใน $rt (Reg[IR[20-16]] = MDR)
 
-
-
-
-
-
-
-
-
-
-* งานครั้งที่ 4
-  [คลิปงานครั้งที่ 4](https://www.youtube.com/watch?v=dOmY8EDUxi0&t=19s)
-  อธิบายการทำงานของคำสั่ง lw ใน cycle
+  ### งานครั้งที่ 4
+  [คลิปงานครั้งที่ 4 การทำงานคำสั่ง lw ใน Multi Cycle](https://www.youtube.com/watch?v=dOmY8EDUxi0&t=19s)
+  
 * งานครั้งที่ 5
   [คลิปงานครั้งที่ 5](https://www.youtube.com/watch?v=IAmkzRGe4yQ&t=14s)
   อธิบายการทำงานของคำสั่ง beq ใน cycle
