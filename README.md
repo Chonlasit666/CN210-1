@@ -116,7 +116,8 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
  
  **คำสั่ง lw ใน Multi Cycle นั้นมีทั้งหมด 5 ขั้นตอนด้วยกัน**
  1. อ่านคำสั่งจาก Memory มาเก็บใน IR (Instruction Register) และนำ PC = PC + 4 พร้อมๆกัน
- 2. นำ ค่าจาก $rs และ $rt ไปเก็บไว้ที่ A,B ตามลำดับ นำค่า offset มาแปลงเป็น 32 บิทแล้วนำไปที่ ALU เพื่อบวกกับ PC แล้วนำไปเก็บที่ ALUout
+ 2. นำ ค่าจาก $rs และ $rt ไปเก็บไว้ที่ A,B ตามลำดับ นำค่า offset มาแปลงเป็น 32 บิทแล้วนำไปที่ ALU เพื่อบวกกับ PC แล้วนำไปเก็บที่ ALUout 
+ (A = Reg[IR[25-21]]) (B = Reg[IR[20-16]])
  3. นำค่า จาก A เข้ามาบวกกับ offset และนำค่าไปไว้ที่ ALUout (ALUOut = A + sign-extend(IR[15-0])
  4. ค่าที่ได้จาก ALUout คือ ค่าของ Address ของ Memory ที่จะถูกอ่านค่าออกมา (MDR = Memory[ALUout])
  5. นำค่าที่อ่านมาจาก Memory ไปเก็บไว้ใน $rt (Reg[IR[20-16]] = MDR)
@@ -124,8 +125,19 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   ### งานครั้งที่ 4
   [คลิปงานครั้งที่ 4 การทำงานคำสั่ง lw ใน Multi Cycle](https://www.youtube.com/watch?v=dOmY8EDUxi0&t=19s)
   
-* งานครั้งที่ 5
-  [คลิปงานครั้งที่ 5](https://www.youtube.com/watch?v=IAmkzRGe4yQ&t=14s)
+## สรุปเนื้อหาการบ้านครั้งที่ 5
+  **การทำงานของคำสั่ง beq ใน Multi Cycle**
+  ![multicycle](https://people.cs.pitt.edu/~don/coe1502/current/Unit4a/fig548.jpg)
+  
+  **คำสั่ง beq ใน Multi Cycle นั้นมีทั้งหมด 3 ขั้นตอนด้วยกัน**
+สำหรับ beq หรือ branch on equal นั้นเป็นคำสั่งประเภื I-Format ซึ่งคำสั่งนี้มีหน้าที่ JUMP โดยจะ JUMP อย่างมีเงื่อนไข คือการดูว่าข้อมูลที่ $rs และ $rt เท่ากันหรือไม่ หากเท่ากันให้ JUMP ไปยังตำแหน่ง Address ต่อไป ซึ่งทั้ง 3 ขั้นตอนนั้นมีดังนี้
+
+1. อ่านคำสั่งจาก Memory มาเก็บใน IR (Instruction Register) และนำ PC = PC + 4 พร้อมๆกัน เหมือนกับคำสั่ง lw ข้อที่แล้ว
+2. นำค่า $rs และ $rt ไปเก็บไว้ที่ A,B ตามลำดับ (A = Reg[IR[25-21]]) (B = Reg[IR[20-16]])
+3. นำค่าจาก A และ B มาเปรียบเทียบกัน หากเท่ากันจะเก็บผลลัพธ์ที่ได้ไว้ใน ALUout แล้ว JUMP ไปยัง Address ต่อไป หากไม่เท่ากันจะข้ามไปทำคำสั่งถัดไปทันที
+  
+   ### งานครั้งที่ 5
+  [คลิปงานครั้งที่ 5 การทำงานของคำสั่ง beq ใน Multi Cycle](https://www.youtube.com/watch?v=IAmkzRGe4yQ&t=14s)
   อธิบายการทำงานของคำสั่ง beq ใน cycle
 * งานครั้งที่ 6
   [คลิปงานครั้งที่ 6](https://www.youtube.com/watch?v=kINS_f38R6I&t=9s)
