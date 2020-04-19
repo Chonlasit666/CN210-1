@@ -98,7 +98,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
     - 1 คำสั่ง = 1 Cycle
     - ในทุกๆคำสั่งใช้เวลาเท่ากันทำให้ใช้เวลามากเนื่องจากจะใช้เวลาของคำสั่งที่ทำงานใช้เวลามากสุด
     
-![multicycle](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cise.ufl.edu%2F~mssz%2FCompOrg%2FCDA-proc.html&psig=AOvVaw0qK5nOnUAdvJn0c9Zop20P&ust=1587394128210000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJC1hIve9OgCFQAAAAAdAAAAABAN)
+![multicycle](https://people.cs.pitt.edu/~don/coe1502/current/Unit4a/fig548.jpg)
 ##### ลักษณะของ Multi Cycle มีดังนี้
     - มี ALU เพียงตัวเดียว
     - มี Memory เพียงตัวเดียว
