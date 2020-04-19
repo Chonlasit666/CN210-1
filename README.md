@@ -86,14 +86,32 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 
 ### งานครั้งที่ 2
   [คลิปงานครั้งที่ 2](https://www.youtube.com/watch?v=afBzikgJ6VA)
-  อธิบายหลักการทำงานของ CPU ในคอมพิวเตอร์
 
 
 
-
-* งานครั้งที่ 3
+## สรุปเนื้อหาการบ้านครั้งที่ 3
+ **ความแตกต่างระหว่าง Single Cycle และ Multi Cycle**
+ ![singlecycle](https://slideplayer.com/slide/4943101/16/images/5/Single+Cycle+Implementation.jpg)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ งานครั้งที่ 3
   [คลิปงานครั้งที่ 3](https://www.youtube.com/watch?v=D7P8hxrkiEY)
   อธิบายความแตกต่าง Single Cycle และ Multi Cycle
+
+
+
+
+
+
+
+
+
+
 * งานครั้งที่ 4
   [คลิปงานครั้งที่ 4](https://www.youtube.com/watch?v=dOmY8EDUxi0&t=19s)
   อธิบายการทำงานของคำสั่ง lw ใน cycle
