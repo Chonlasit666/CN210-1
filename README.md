@@ -112,7 +112,9 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   
 ## สรุปเนื้อหาการบ้านครั้งที่ 4
  **การทำงานของคำสั่ง lw ใน Multi Cycle**
-    คำสั่ง lw ใน Multi Cycle นั้นมีทั้งหมด 5 ขั้นตอนด้วยกัน
+ ![multicycle](https://people.cs.pitt.edu/~don/coe1502/current/Unit4a/fig548.jpg)
+ 
+ **คำสั่ง lw ใน Multi Cycle นั้นมีทั้งหมด 5 ขั้นตอนด้วยกัน**
  1. อ่านคำสั่งจาก Memory มาเก็บใน IR (Instruction Register) และนำ PC = PC + 4 พร้อมๆกัน
  2. นำ ค่าจาก $rs และ $rt ไปเก็บไว้ที่ A,B ตามลำดับ นำค่า offset มาแปลงเป็น 32 บิทแล้วนำไปที่ ALU เพื่อบวกกับ PC แล้วนำไปเก็บที่ ALUout
  3. นำค่า จาก A เข้ามาบวกกับ offset และนำค่าไปไว้ที่ ALUout (ALUOut = A + sign-extend(IR[15-0])
