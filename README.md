@@ -27,7 +27,10 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 |Data Transfer | lw | $rt | offset($rs)  |   |   |
 |             |  sw | $rt | offset($rs)  |   |   |
 |Branch      |  beq | $rs | $rt | offset |   |   |
+
+
 **J-Format** -เป็นคำสั่งสำหรับ jump จาก Address ปัจจุบัน ไปยังอีกตำแหน่งนึง
+
 |**J-Format**|     |
 |------------|-----|
 |     op     | Address |
