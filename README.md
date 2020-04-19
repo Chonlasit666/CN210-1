@@ -145,8 +145,21 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   #### มีทั้งหมด 4 Cycle ด้วยกันดังนี้
   ### Cycle 1 Instruction Fetch
   ![stateno1](https://image1.slideserve.com/3211244/slide21-n.jpg)
-  จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้ 
-                  MemRead = 1 คือ
+  **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
+  MemRead = 1 คือ ทำการอ่านค่าจาก Memory
+  IorD    = 1 คือ เช็คว่า PC นั้นชี้ไปที่ Address ใดใน Memory
+  IRWrite = 1 คือ นำค่าจาก Address Memory ที่ถูกชี้ ไปเก็บไว้ใน IR
+  ALUSrcA = 0 คือ Mux เลือกค่าจาก 0 ซึ่งคือ PC ค่าที่ถูกเขียนใน IR จะมี ALUSrcA ทำการควบคุม
+  ALUSrcB = 1 คือ Mux เลือกค่าจาก 1 ซึ่งคือ 4 ค่าที่ถูกเขียนใน IR จะมี ALUSrcB ทำการควบคุม
+  ALUOP   = ADD คือ การนำค่า PC มาบวกกับ 4
+  PCWrite = 1, PCSource = 1   นำผลลัพธ์การคำนวณเขียนทับที่ PC = PC + 4
+  
+  ### Cycle 2 Decode & Register Fetch
+  ![stateno2](https://image1.slideserve.com/3211244/slide23-n.jpg)
+  **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
+   ALUSrcA = 0 คือ Mux เลือกค่าจาก 0 ซึ่งคือ PC  ALUSrcA ทำการควบคุม
+   ALUSrcB = 3 คือ Mux เลือกค่าจาก 3 จะทำหน้าที่ควบคุมคำสั่ง ADD
+   
   
 * งานครั้งที่ 6
   [คลิปงานครั้งที่ 6](https://www.youtube.com/watch?v=kINS_f38R6I&t=9s)
