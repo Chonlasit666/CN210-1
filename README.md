@@ -161,9 +161,27 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   
   **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
    
-   <br>ALUSrcA = 0 คือ Mux เลือกค่าจาก 0 ซึ่งคือ PC  ALUSrcA ทำการควบคุม
-   <br>ALUSrcB = 3 คือ Mux เลือกค่าจาก 3 จะทำหน้าที่ควบคุมคำสั่ง ADD
+   <br>ALUSrcA = 0 คือ Mux เลือกค่าจาก 0 ซึ่งคือ PC 
+   <br>ALUSrcB = 3 คือ Mux เลือกค่าจาก 3 ซึ่งคือ Offset 
+   <br>ALUop   = 0 คือ ALUop จะทำการควบคุมคำสั่ง ADD
    
+  ### Cycle 3 R-Format Execution
+  ![stateno3](https://image1.slideserve.com/3211244/slide25-n.jpg)
+  
+  **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
+  
+  <br>ALUSrcA = 1 คือ Mux เลือกค่าจาก 1 ซึ่งคือ $rs 
+  <br>ALUSrcB = 0 คือ Mux เลือกค่าจาก 0 ซึ่งคือ $rt
+  <br>ALUop   = 2 คือ ALUop จะทำการควบคุมคำสั่งให้เป็นไปตามคำสั่งใน IR
+  
+   ### Cycle 4 R-Format Write Register
+  ![stateno4](https://image1.slideserve.com/3211244/slide27-n.jpg)
+  
+  **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
+  
+  <br>RegWrite = 1 คือ นำค่าจาก ALUout มาเขียนใน $rd
+  <br>MemtoReg = 0 คือ Mux เลือกค่าจาก 0 ซึ่งคือ ALUout
+  <br>RegDst   = 1 คือ Mux เลือกค่าจาก 1 ซึ่งคือ $rd
   
 * งานครั้งที่ 6
   [คลิปงานครั้งที่ 6](https://www.youtube.com/watch?v=kINS_f38R6I&t=9s)
