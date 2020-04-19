@@ -105,8 +105,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
     - มีการพักข้อมูลที่ตำแหน่ง a และ b ในรูป
     - ใช้เวลาแต่ละคำสั่งไม่เท่ากัน
     - มี ALUout ที่เก็บค่าหลังจากคำนวณ
- 
- ### งานครั้งที่ 3
+  ### งานครั้งที่ 3
   [คลิปงานครั้งที่ 3 อธิบายความแตกต่างระหว่าง Single Cycle และ Multi Cycle](https://www.youtube.com/watch?v=D7P8hxrkiEY)
   
   
@@ -138,7 +137,17 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   
    ### งานครั้งที่ 5
   [คลิปงานครั้งที่ 5 การทำงานของคำสั่ง beq ใน Multi Cycle](https://www.youtube.com/watch?v=IAmkzRGe4yQ&t=14s)
-  อธิบายการทำงานของคำสั่ง beq ใน cycle
+  
+  
+## สรุปเนื้อหาการบ้านครั้งที่ 6
+  **State Machine ของ คำสั่งชนิด R-Format**
+  ![statemachine](https://image3.slideserve.com/5922537/the-four-stages-of-r-type-l.jpg)
+  #### มีทั้งหมด 4 Cycle ด้วยกันดังนี้
+  ### Cycle 1 Instruction Fetch
+  ![stateno1](https://image1.slideserve.com/3211244/slide21-n.jpg)
+  จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้ 
+                  MemRead = 1 คือ
+  
 * งานครั้งที่ 6
   [คลิปงานครั้งที่ 6](https://www.youtube.com/watch?v=kINS_f38R6I&t=9s)
 * งานครั้งที่ 7
