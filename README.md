@@ -42,7 +42,8 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 |     op     | Address |
 |     6bit   | 26bit|
 
-|**คำสั่ง**    |     |
+|**คำสั่ง**    |           |
+|------------|------------|
 | jump       |  j address|
 | jump&link  |jal address|
 
