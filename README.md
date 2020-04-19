@@ -92,8 +92,19 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 ## สรุปเนื้อหาการบ้านครั้งที่ 3
  **ความแตกต่างระหว่าง Single Cycle และ Multi Cycle**
  ![singlecycle](https://slideplayer.com/slide/4943101/16/images/5/Single+Cycle+Implementation.jpg)
- 
- 
+ ##### ลักษณะของ Single Cycle มีดังนี้
+    - มี ALU 3 ตัว
+    - มี Memory 2 ตัว
+    - 1 คำสั่ง = 1 Cycle
+    - ในทุกๆคำสั่งใช้เวลาเท่ากันทำให้ใช้เวลามากเนื่องจากจะใช้เวลาของคำสั่งที่ทำงานใช้เวลามากสุด
+    
+![multicycle](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cise.ufl.edu%2F~mssz%2FCompOrg%2FCDA-proc.html&psig=AOvVaw0qK5nOnUAdvJn0c9Zop20P&ust=1587394128210000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJC1hIve9OgCFQAAAAAdAAAAABAN)
+##### ลักษณะของ Multi Cycle มีดังนี้
+    - มี ALU เพียงตัวเดียว
+    - มี Memory เพียงตัวเดียว
+    - มีการพักข้อมูลที่ตำแหน่ง a และ b ในรูป
+    - ใช้เวลาแต่ละคำสั่งไม่เท่ากัน
+    - มี ALUout ที่เก็บค่าหลังจากคำนวณ
  
  
  
