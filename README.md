@@ -26,11 +26,13 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 |------------|-----|-----|-----|
 |     op     | $rs | $rt | offset |
 |     6bit   | 5bit| 5bit| 16bit  |
-|**คำสั่ง**    |     |     |        |         |  
+
+|**คำสั่ง**    |     |     |        |         | 
+|------------|-----|-----|---------|--------|
 |ALUi        |alui | $rt | $rs     | value   |
-|Data Transfer | lw | $rt | offset($rs)  |   |   |
-|             |  sw | $rt | offset($rs)  |   |   |
-|Branch      |  beq | $rs | $rt | offset |   |   |
+|Data Transfer | lw | $rt | offset($rs)  |   |
+|             |  sw | $rt | offset($rs)  |   |
+|Branch      |  beq | $rs | $rt | offset |   | 
 
 
 **J-Format** -เป็นคำสั่งสำหรับ jump จาก Address ปัจจุบัน ไปยังอีกตำแหน่งนึง
