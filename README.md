@@ -50,6 +50,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 ### งานครั้งที่ 1
   [คลิปงานครั้งที่ 1 อธิบายรูปแบบคำสั่ง R-FORMAT](https://www.youtube.com/watch?v=uxKd0FtUXx8&t=9s)
 
+
 ## สรุปเนื้อหาการบ้านครั้งที่ 2
 **การทำงานของ CPU**
 ภาษาที่มนุษย์ใช้สื่อสารกับคอมพิวเตอร์เช่น JAVA,Python,C++ นั้นจริงๆแล้วคอมพิวเตอร์จะทำการแปลง คำสั่งต่างๆที่เราเขียนผ่านภาษาเหล่านี้ เป็นภาษาคอมพิวเตอร์ก่อน 
@@ -92,6 +93,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 ## สรุปเนื้อหาการบ้านครั้งที่ 3
  **ความแตกต่างระหว่าง Single Cycle และ Multi Cycle**
  ![singlecycle](https://slideplayer.com/slide/4943101/16/images/5/Single+Cycle+Implementation.jpg)
+ 
  ##### ลักษณะของ Single Cycle มีดังนี้
     - มี ALU 3 ตัว
     - มี Memory 2 ตัว
@@ -99,12 +101,14 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
     - ในทุกๆคำสั่งใช้เวลาเท่ากันทำให้ใช้เวลามากเนื่องจากจะใช้เวลาของคำสั่งที่ทำงานใช้เวลามากสุด
     
 ![multicycle](https://people.cs.pitt.edu/~don/coe1502/current/Unit4a/fig548.jpg)
+
 ##### ลักษณะของ Multi Cycle มีดังนี้
     - มี ALU เพียงตัวเดียว
     - มี Memory เพียงตัวเดียว
     - มีการพักข้อมูลที่ตำแหน่ง a และ b ในรูป
     - ใช้เวลาแต่ละคำสั่งไม่เท่ากัน
     - มี ALUout ที่เก็บค่าหลังจากคำนวณ
+  
   ### งานครั้งที่ 3
   [คลิปงานครั้งที่ 3 อธิบายความแตกต่างระหว่าง Single Cycle และ Multi Cycle](https://www.youtube.com/watch?v=D7P8hxrkiEY)
   
@@ -143,7 +147,9 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   **State Machine ของ คำสั่งชนิด R-Format**
   ![statemachine](https://image3.slideserve.com/5922537/the-four-stages-of-r-type-l.jpg)
   #### มีทั้งหมด 4 Cycle ด้วยกันดังนี้
+  
   ### Cycle 1 Instruction Fetch
+  
   ![stateno1](https://image1.slideserve.com/3211244/slide21-n.jpg)
   
   **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
@@ -157,6 +163,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   <br>PCWrite = 1, PCSource = 1   นำผลลัพธ์การคำนวณเขียนทับที่ PC = PC + 4
   
   ### Cycle 2 Decode & Register Fetch
+  
   ![stateno2](https://image1.slideserve.com/3211244/slide23-n.jpg)
   
   **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
@@ -166,6 +173,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
    <br>ALUop   = 0 คือ ALUop จะทำการควบคุมคำสั่ง ADD
    
   ### Cycle 3 R-Format Execution
+  
   ![stateno3](https://image1.slideserve.com/3211244/slide25-n.jpg)
   
   **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
@@ -175,6 +183,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
   <br>ALUop   = 2 คือ ALUop จะทำการควบคุมคำสั่งให้เป็นไปตามคำสั่งใน IR
   
    ### Cycle 4 R-Format Write Register
+  
   ![stateno4](https://image1.slideserve.com/3211244/slide27-n.jpg)
   
   **จากรูปภาพ ตัวหนังสือสีแดง แสดงถึงส่วนที่ทำใน Cycle นี้ ตัวหนังสือสีดำ แสดงถึงส่วนที่ไม่ได้ทำใน Cycle นี้** 
@@ -190,6 +199,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 
 
 ## สรุปเนื้อหาการบ้านครั้งที่ 7
+ 
  **Pipelining**
 Pipelining เป็นวิธีการทำคำสั่งที่ช่วยให้ทำไวขึ้น หลักๆคือ 1 คำสั่ง จบในหลายๆ Cycle ถึงแม้ว่าจะทำคำสั่งแรกยังไม่เสร็จแต่สามารถนำคำสั่งถัดไปมาทำงานต่อได้เลย
 
