@@ -146,6 +146,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
 ## สรุปเนื้อหาการบ้านครั้งที่ 6
   **State Machine ของ คำสั่งชนิด R-Format**
   ![statemachine](https://image3.slideserve.com/5922537/the-four-stages-of-r-type-l.jpg)
+  
   #### มีทั้งหมด 4 Cycle ด้วยกันดังนี้
   
   ### Cycle 1 Instruction Fetch
@@ -172,7 +173,7 @@ MIPS คอมพิวเตอร์ชนิด RISC ผลิตโดย MI
    <br>ALUSrcB = 3 คือ Mux เลือกค่าจาก 3 ซึ่งคือ Offset 
    <br>ALUop   = 0 คือ ALUop จะทำการควบคุมคำสั่ง ADD
    
-  ### Cycle 3 R-Format Execution
+   ### Cycle 3 R-Format Execution
   
   ![stateno3](https://image1.slideserve.com/3211244/slide25-n.jpg)
   
